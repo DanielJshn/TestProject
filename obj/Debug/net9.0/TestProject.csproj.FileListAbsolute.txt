@@ -319,3 +319,4 @@ C:\Users\danie\Desktop\TestProject\obj\Debug\net9.0\TestProject.pdb
 C:\Users\danie\Desktop\TestProject\obj\Debug\net9.0\TestProject.genruntimeconfig.cache
 C:\Users\danie\Desktop\TestProject\obj\Debug\net9.0\ref\TestProject.dll
 C:\Users\danie\Desktop\TestProject\bin\Debug\net9.0\AutoMapper.dll
+C:\Users\danie\Desktop\TestProject\obj\Debug\net9.0\TestProject.sourcelink.json

@@ -12,6 +12,7 @@ namespace apief
             _noteRepository = noteRepository;
             _mapper = mapper;
         }
+
         public async Task<NoteDto> CreateNoteAsync(NoteDto noteDto, Guid userId)
         {
 
@@ -21,6 +22,7 @@ namespace apief
             }
 
             var noteModel = _mapper.Map<Note>(noteDto);
+            noteModel.noteId = Guid.NewGuid();
             noteModel.id = userId;
 
             await _noteRepository.AddAsync(noteModel);
@@ -38,13 +40,13 @@ namespace apief
                 return new List<NoteDto>();
             }
 
-            var noteDtos = _mapper.Map<List<NoteDto>>(notes);
+            var noteDto = _mapper.Map<List<NoteDto>>(notes);
 
-            return noteDtos;
+            return noteDto;
         }
 
 
-        public async Task<NoteDto> UpdateNoteAsync(Guid noteId, NoteDto noteDto, Guid userId)
+        public async Task<NoteDto> UpdateNoteAsync(Guid noteId, NoteUpdateDto noteDto, Guid userId)
         {
 
             var note = await _noteRepository.GetNoteByNoteId(noteId);
@@ -66,7 +68,7 @@ namespace apief
 
             var updatedNotes = await _noteRepository.GetNotesAsync(userId);
 
-            var noteDtos = _mapper.Map<List<NoteDto>>(updatedNotes);
+            _mapper.Map<List<NoteDto>>(updatedNotes);
 
             return _mapper.Map<NoteDto>(note);
         }
