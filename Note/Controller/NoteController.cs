@@ -17,7 +17,7 @@ namespace apief
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostNote(NoteDto noteDto)
+        public async Task<IActionResult> PostNote(NoteCreateDto noteDto)
         {
             try
             {
@@ -53,7 +53,7 @@ namespace apief
         }
 
         [HttpPut("noteId")] 
-        public async Task<IActionResult> PutNote(Guid noteId, NoteUpdateDto note)
+        public async Task<IActionResult> PutNote(Guid noteId, NoteCreateDto note)
         {
             try
             {

@@ -13,7 +13,7 @@ namespace apief
             _mapper = mapper;
         }
 
-        public async Task<NoteDto> CreateNoteAsync(NoteDto noteDto, Guid userId)
+        public async Task<NoteDto> CreateNoteAsync(NoteCreateDto noteDto, Guid userId)
         {
 
             if (string.IsNullOrWhiteSpace(noteDto.title))
@@ -46,7 +46,7 @@ namespace apief
         }
 
 
-        public async Task<NoteDto> UpdateNoteAsync(Guid noteId, NoteUpdateDto noteDto, Guid userId)
+        public async Task<NoteDto> UpdateNoteAsync(Guid noteId, NoteCreateDto noteDto, Guid userId)
         {
 
             var note = await _noteRepository.GetNoteByNoteId(noteId);

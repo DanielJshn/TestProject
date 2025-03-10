@@ -7,9 +7,7 @@ namespace apief
         public MappingProfile()
         {
             CreateMap<Note, NoteDto>().ReverseMap();
-            CreateMap<Note, NoteResponseDto>().ReverseMap();
-            CreateMap<NoteDto, NoteResponseDto>().ReverseMap();
-            CreateMap<NoteUpdateDto, NoteResponseDto>().ReverseMap();
+            CreateMap<Note, NoteCreateDto>().ReverseMap();
         }
     }
 }

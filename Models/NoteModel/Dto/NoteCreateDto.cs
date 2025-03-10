@@ -1,6 +1,6 @@
 namespace apief
 {
-    public class NoteUpdateDto
+    public class NoteCreateDto
     {
         public string? title { get; set; }
         public string? description { get; set; }
