@@ -26,7 +26,7 @@ string? tokenKeyString = builder.Configuration.GetSection(AuthHelp.KEY_TOKEN_KEY
 
 if (string.IsNullOrEmpty(tokenKeyString))
 {
-    throw new ArgumentException("TokenKey is not configured.");
+    throw new ArgumentException("TokenKey is not configured");
 }
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -56,7 +56,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                     context.Response.ContentType = "application/json";
                     return context.Response.WriteAsync(jsonResponse);
                 }
-
                 return Task.CompletedTask;
             }
         };
@@ -65,6 +64,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddLogging();
+
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddScoped<ILog, Log>();
