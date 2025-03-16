@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 
 namespace apief
 {
@@ -63,6 +64,8 @@ namespace apief
             note.title = noteDto.title;
             note.description = noteDto.description;
             note.done = noteDto.done;
+            note.isImportant = noteDto.isImportant;
+            note.createdAt = DateTime.UtcNow;
 
             await _noteRepository.UpdateAsync(note);
 
