@@ -53,12 +53,12 @@ namespace apief
             var note = await _noteRepository.GetNoteByNoteId(noteId);
             if (note == null)
             {
-                throw new KeyNotFoundException($"Note with ID {noteId} not found.");
+                throw new KeyNotFoundException($"Note with ID {noteId} not found");
             }
 
             if (string.IsNullOrWhiteSpace(noteDto.title))
             {
-                throw new ArgumentException("Title is required.");
+                throw new ArgumentException("Title is required");
             }
 
             note.title = noteDto.title;

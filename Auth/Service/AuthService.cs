@@ -61,13 +61,13 @@ namespace apief
                 !userForRegistration.password.Any(ch => !char.IsLetterOrDigit(ch)))
             {
                 _logger.LogWarning("Invalid password for user: {Email}", userForRegistration.email);
-                throw new InvalidOperationException("Password must be at least 8 characters long, contain at least one digit and one special character.");
+                throw new InvalidOperationException("Password must be at least 8 characters long, contain at least one digit and one special character");
             }
 
             if (!IsEmailValid(userForRegistration.email))
             {
                 _logger.LogWarning("Invalid email format: {Email}", userForRegistration.email);
-                throw new InvalidOperationException("Email must contain '@' symbol.");
+                throw new InvalidOperationException("Email must contain '@' symbol");
             }
 
             return Task.CompletedTask;

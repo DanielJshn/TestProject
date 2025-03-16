@@ -24,7 +24,7 @@ namespace apief
             string? passwordKeyString = _config.GetSection(KEY_PASSWORD_KEY).Value;
             if (string.IsNullOrEmpty(passwordKeyString))
             {
-                throw new ArgumentException("PasswordKey is not configured.");
+                throw new ArgumentException("PasswordKey is not configured");
             }
 
             byte[] passwordKey = Encoding.ASCII.GetBytes(passwordKeyString);
@@ -54,7 +54,7 @@ namespace apief
 
             if (string.IsNullOrEmpty(tokenKeyString))
             {
-                throw new ArgumentException("TokenKey is not configured.");
+                throw new ArgumentException("TokenKey is not configured");
             }
 
            
