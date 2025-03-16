@@ -71,9 +71,9 @@ namespace apief
 
             var updatedNotes = await _noteRepository.GetNotesAsync(userId);
 
-            _mapper.Map<List<NoteDto>>(updatedNotes);
+            var result = _mapper.Map<List<NoteDto>>(updatedNotes);
 
-            return _mapper.Map<NoteDto>(note);
+            return _mapper.Map<NoteDto>(result);
         }
 
 
@@ -86,9 +86,9 @@ namespace apief
             {
                 throw new Exception("Note not found");
             }
-
             await _noteRepository.DeleteNoteAsync(noteId);
-
         }
     }
 }
+// 0954693870
+// MIKOLA ILICI
