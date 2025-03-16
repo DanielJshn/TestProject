@@ -24,6 +24,7 @@ namespace apief
             string datalog = dateTime.ToString("yyyy-MM-dd HH:mm:ss");
 
             string formattedMessage = $"{datalog}: {message}";
+            
             _logger.LogWarning(formattedMessage, args);
         }
     }

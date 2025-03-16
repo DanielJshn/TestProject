@@ -4,6 +4,7 @@ public class ApiResponse
     public string? Message { get; set; }
     public object? Data { get; set; }
 
+
     public ApiResponse(bool success, string? message = null, object? data = null)
     {
         Success = success;

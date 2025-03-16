@@ -19,7 +19,6 @@ namespace apief
 
             var endTime = DateTime.UtcNow;
             var processingTime = endTime - startTime;
-
             _logger.LogInformation($"Request [{context.Request.Method}] {context.Request.Path} took {processingTime.TotalMilliseconds} ms");
         }
     }

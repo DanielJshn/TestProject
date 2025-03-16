@@ -28,7 +28,7 @@ namespace apief
                     Console.WriteLine($"Type: {claim.Type}, Value: {claim.Value}");
                 }
                 _logger.LogWarning("Email not found in token claims.");
-                throw new UnauthorizedAccessException("User email not found in token.");
+                throw new UnauthorizedAccessException("User email not found in token");
             }
 
             _logger.LogInfo("Extracted email: {Email}", email);
@@ -37,7 +37,7 @@ namespace apief
             if (user == null)
             {
                 _logger.LogWarning("User not found for email: {Email}", email);
-                throw new UnauthorizedAccessException("User not found.");
+                throw new UnauthorizedAccessException("User not found");
             }
 
             return user;

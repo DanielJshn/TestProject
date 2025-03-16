@@ -56,7 +56,6 @@ namespace apief
                 .Property(n => n.done)
                 .IsRequired(false);
         }
-
     }
 }
 
