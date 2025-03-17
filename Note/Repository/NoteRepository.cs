@@ -11,6 +11,7 @@ namespace apief
             _dataContext = dataContext;
         }
 
+
         public async Task AddAsync(Note note)
         {
             await _dataContext.Notes.AddAsync(note);
@@ -24,7 +25,6 @@ namespace apief
                 .Where(t => t.id == userId && (!isImportant || t.isImportant))
                 .ToListAsync();
         }
-
 
 
         public async Task<Note> GetNoteByNoteId(Guid noteId)

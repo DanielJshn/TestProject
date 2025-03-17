@@ -38,6 +38,7 @@ namespace apief
             }
         }
 
+
         [HttpGet]
         public async Task<IActionResult> GetNote(bool isImportant)
         {
@@ -52,6 +53,7 @@ namespace apief
                 return BadRequest(new ApiResponse(success: false, message: ex.Message));
             }
         }
+
 
         [HttpPut("noteId")] 
         public async Task<IActionResult> PutNote(Guid noteId, NoteCreateDto note)
@@ -68,6 +70,7 @@ namespace apief
                 return BadRequest(new ApiResponse(success: false, message: ex.Message));
             }
         }
+
 
         [HttpDelete("noteId")] 
         public async Task<IActionResult> DeleteNote(Guid noteId)

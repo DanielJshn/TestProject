@@ -8,8 +8,6 @@ namespace apief
     [Route("[controller]")]
     public class AuthController : ControllerBase
     {
-        private const int KEY_BYTES_LENGTH = 32;
-        private const int VI_BYTES_LENGTH = 16;
         private readonly IAuthService _authService;
         private readonly IIdentityUser _identity;
 

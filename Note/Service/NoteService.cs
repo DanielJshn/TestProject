@@ -14,6 +14,7 @@ namespace apief
             _mapper = mapper;
         }
 
+
         public async Task<NoteDto> CreateNoteAsync(NoteCreateDto noteDto, Guid userId)
         {
 
@@ -90,5 +91,3 @@ namespace apief
         }
     }
 }
-// 0954693870
-// MIKOLA ILICI
