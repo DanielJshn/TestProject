@@ -7,5 +7,7 @@ namespace apief
         public string? description { get; set; }
         public bool? done { get; set; }
         public bool isImportant { get; set; } = false;
+        public DateTime createdAt { get; set; } = DateTime.UtcNow;
+
     }
 }
