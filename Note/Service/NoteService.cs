@@ -32,9 +32,9 @@ namespace apief
         }
 
 
-        public async Task<List<NoteDto>> GetNotesAsync(Guid userId)
+        public async Task<List<NoteDto>> GetNotesAsync(Guid userId, bool isImportant)
         {
-            var notes = await _noteRepository.GetNotesAsync(userId);
+            var notes = await _noteRepository.GetNotesAsync(userId, isImportant);
 
             if (notes == null || !notes.Any())
             {
@@ -69,11 +69,11 @@ namespace apief
 
             await _noteRepository.UpdateAsync(note);
 
-            var updatedNotes = await _noteRepository.GetNotesAsync(userId);
+            var updatedNotes = await _noteRepository.GetNoteByNoteId(noteId);
 
-            var result = _mapper.Map<List<NoteDto>>(updatedNotes);
+            _mapper.Map<NoteDto>(updatedNotes);
 
-            return _mapper.Map<NoteDto>(result);
+            return _mapper.Map<NoteDto>(updatedNotes);
         }
 
 

@@ -18,13 +18,13 @@ namespace apief
         }
 
 
-        public async Task<IEnumerable<Note>> GetNotesAsync(Guid userId)
+        public async Task<IEnumerable<Note>> GetNotesAsync(Guid userId, bool isImportant)
         {
-
             return await _dataContext.Notes
-                .Where(t => t.id == userId)
+                .Where(t => t.id == userId && (!isImportant || t.isImportant))
                 .ToListAsync();
         }
+
 
 
         public async Task<Note> GetNoteByNoteId(Guid noteId)

@@ -39,12 +39,12 @@ namespace apief
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetNote()
+        public async Task<IActionResult> GetNote(bool isImportant)
         {
             try
             {
                 var identity = await _identityUser.GetUserByTokenAsync(User);
-                var response = await _noteService.GetNotesAsync(identity.id);
+                var response = await _noteService.GetNotesAsync(identity.id, isImportant);
                 return Ok(new ApiResponse(success: true, data: response));
             }
             catch (Exception ex)
